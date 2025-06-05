@@ -24,7 +24,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push image
+
+      - name: Build and push semgrep:latest (main branch only)
+        if: github.ref_name == 'main' && github.ref_type == 'branch'
         uses: docker/build-push-action@v4
         with:
           context: .
@@ -32,8 +34,13 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.repository }}/semgrep:latest
+
+      - name: Build and push semgrep:${{ github.ref_name }} (tag push only)
+        if: github.ref_type == 'tag'
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          tags: |
             ghcr.io/${{ github.repository }}/semgrep:${{ github.ref_name }}
-
-
-
-
