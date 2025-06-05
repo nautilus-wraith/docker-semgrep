@@ -6,6 +6,8 @@ on:
   push: # Used for local testing.
     branches:
       - 'main' 
+    tags:
+      - '*'      
 
 jobs:
   semgrep:
@@ -28,7 +30,9 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}/semgrep-with-sarif-transform:latest
+          tags: |
+            ghcr.io/${{ github.repository }}/semgrep:latest
+            ghcr.io/${{ github.repository }}/semgrep:${{ github.ref_name }}
 
 
 
