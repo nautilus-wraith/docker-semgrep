@@ -10,4 +10,4 @@ RUN wget https://epss.cyentia.com/epss_scores-current.csv.gz -O epss.csv.gz && \
 
 FROM semgrep/semgrep:1.144.0
 
-COPY --from=epss-builder /work/epss.csv epss.csv
+COPY --from=epss-builder /work/epss.csv /opt/epss.csv
