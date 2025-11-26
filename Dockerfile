@@ -8,6 +8,7 @@ RUN wget https://epss.cyentia.com/epss_scores-current.csv.gz -O epss.csv.gz && \
     gunzip -f epss.csv.gz && \
     sed -i '1d' epss.csv
 
+ARG SEMGREP_VERSION
 FROM semgrep/semgrep:${SEMGREP_VERSION}
 
 COPY --from=epss-builder /work/epss.csv /opt/epss.csv

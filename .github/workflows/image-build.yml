@@ -40,4 +40,4 @@ jobs:
             SEMGREP_VERSION=${{ env.SEMGREP_VERSION }}
           tags: |
             ghcr.io/${{ github.repository }}/semgrep:latest
-            ghcr.io/${{ github.repository }}/semgrep:v${{ env.SEMGREP_VERSION }}
+            ghcr.io/${{ github.repository }}/semgrep:${{ env.SEMGREP_VERSION }}
