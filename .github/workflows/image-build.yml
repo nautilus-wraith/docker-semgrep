@@ -2,7 +2,7 @@ name: Build Semgrep image
 run-name: "[Image build] Ref:${{ github.ref_name }} Event:${{ github.event_name }}"
 
 env:
-  SEMGREP_VERSION: "1.143.0"  # Update this to change the version for scheduled builds
+  SEMGREP_VERSION: "1.144.0"
 
 on:
   workflow_dispatch: {}

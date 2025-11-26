@@ -1,4 +1,4 @@
-ARG SEMGREP_VERSION=1.144.0
+ARG SEMGREP_VERSION
 
 FROM ubuntu:22.04 AS epss-builder
 RUN apt-get update && \
