@@ -6,4 +6,4 @@ Includes Sarif post-processing script for human readable findings severity level
 
 Containers pushed to Nautilus Organisation Package registry: https://github.com/orgs/nautilus-wraith/packages
 
-Image contain also EPSS table used for EPSS filtering in SCA scans. That is why we rebuild the image regularly.
+Image contains also EPSS table used for EPSS filtering in SCA scans. That is why we rebuild the image regularly.
