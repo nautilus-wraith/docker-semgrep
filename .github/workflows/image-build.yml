@@ -38,6 +38,8 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.repository }}/semgrep:latest
+            ghcr.io/${{ github.repository }}/semgrep:v${{ env.SEMGREP_VERSION }}
+
 
       - name: Build and push semgrep with versioned tag
         if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
