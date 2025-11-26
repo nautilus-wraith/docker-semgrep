@@ -10,8 +10,7 @@ on:
     branches:
       - 'main'
   schedule:
-    # Build every Monday at 00:00 UTC
-    - cron: '0 0 * * 1'
+    - cron: '45 0 * * *'
 
 jobs:
   semgrep:
